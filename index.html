@@ -19,33 +19,41 @@
 
 </head>
 <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/logo.svg" alt="">
             </figure>
             <ul class="nav__link--list">
-               <li class="nav__link"><a href="#" class="
-                nav__link--anchor
-                link__hover-effect
-                link__hover-effect--black">About</a>
-            </li>
-               <li class="nav__link"><a href="#" class="
-                nav__link--anchor
-                link__hover-effect
-                link__hover-effect--black">Projects</a>
-            </li>
-               <li class="nav__link" onclick="toggleModal()"><a href="#" class="
-                nav__link--anchor
-                link__hover-effect
-                link__hover-effect--black">Contact</a>
-            </li>
-               <li class="nav__link click"><a href="#" class="
-                nav__link--anchor
-                link__hover-effect
-                link__hover-effect--black"><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
-            </li>
-            </ul>
+                <li class="nav__link" onclick="toggleModal()">
+                  <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                  ">About</a>
+                </li>
+                <li class="nav__link">
+                  <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                  ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                  <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                  ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                  <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                  "><i class="fas fa-adjust"></i></a>
+                </li>
+              </ul>
         </nav>
         <header class="header">
             <div class="header__content">
@@ -72,9 +80,11 @@
                 </div>
             </div>
         </header>
+        <a href="#">
         <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
+    </a>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click">
 
@@ -162,6 +172,16 @@
                 </div>
             </div>
         </div>
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
+        
     </section>
     <section id="projects">
         <div class="container">
@@ -215,13 +235,13 @@
                 link__hover-effect--white">
             Linkedin
                 </a>
-                <a href="#" class="
+                <a href="#" onclick="toggleModal()" class="
                 footer__social--link
                 link__hover-effect
                 link__hover-effect--white">
             Email
             </a>
-                <a href="#" class="
+                <a href="./assets/Aaron Ma_Vancouver Resume.pdf" class="
                 footer__social--link
                 link__hover-effect
                 link__hover-effect--white">
