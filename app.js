@@ -4,7 +4,9 @@
 
 let isModalOpen = false;
 let contrastToggle = false;
-const scaleFactor = 1/20
+const scaleFactor = 1/20;
+let isMarketingProjectsOpen = false;
+let isSoftwareProjectsOpen = false;
 
 function moveBackground(event) {
     const shapes = document.querySelectorAll(".shape");
@@ -62,4 +64,30 @@ function toggleModal() {
     document.body.classList += " modal--open";
 }
 
+function toggleSoftwareProjects() {
+    // const removeMarketingProjects = document.querySelectorAll(".marketing-project");
+    // const addSoftwareProjects = document.querySelectorAll(".software-project");
+    const softwareProject = document.querySelector("software__hidden");
+    
+    document.querySelector(".marketing-project").classList += " marketing__hidden";
+        
+}
+
+function toggleMarketingProjects() {
+    
+    // const softwareProject = document.querySelectorAll(".software-project")
+    isMarketingProjectsOpen = !isMarketingProjectsOpen;
+    // softwareProject[0].remove();
+    
+    
+    const boxes = document.querySelectorAll('#software-project');
+    
+    if (isMarketingProjectsOpen) {
+        boxes.forEach(box => {box.classList.add('software__hidden');
+    })}
+    else {
+        boxes.forEach(box => {box.classList.remove('software__hidden');   
+    })}
+
+}
 
