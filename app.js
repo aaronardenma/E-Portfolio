@@ -8,6 +8,7 @@ const scaleFactor = 1/20;
 let isMarketingProjectsOpen = false;
 let isSoftwareProjectsOpen = false;
 
+
 function moveBackground(event) {
     const shapes = document.querySelectorAll(".shape");
     const x = event.clientX * scaleFactor;
@@ -65,28 +66,37 @@ function toggleModal() {
 }
 
 function toggleSoftwareProjects() {
-    // const removeMarketingProjects = document.querySelectorAll(".marketing-project");
-    // const addSoftwareProjects = document.querySelectorAll(".software-project");
-    const softwareProject = document.querySelector("software__hidden");
+    const marketingProject = document.querySelectorAll(".marketing-project");
+    const softwareProject = document.querySelectorAll('.software-project');
     
-    document.querySelector(".marketing-project").classList += " marketing__hidden";
+    isSoftwareProjectsOpen = !isSoftwareProjectsOpen;
+    isMarketingProjectsOpen = false
+    
+    if (isSoftwareProjectsOpen) {
+        marketingProject.forEach(mp => {mp.classList.add('marketing__hidden')});
+        softwareProject.forEach(sp => {sp.classList.remove('software__hidden')});   
+
+    }
+    else {
+        marketingProject.forEach(mp => {mp.classList.remove('marketing__hidden');   
+    })}
         
 }
 
 function toggleMarketingProjects() {
-    
-    // const softwareProject = document.querySelectorAll(".software-project")
+    const marketingProject = document.querySelectorAll(".marketing-project");
+    const softwareProject = document.querySelectorAll('.software-project');
+
     isMarketingProjectsOpen = !isMarketingProjectsOpen;
-    // softwareProject[0].remove();
-    
-    
-    const boxes = document.querySelectorAll('#software-project');
+    isSoftwareProjectsOpen = false
     
     if (isMarketingProjectsOpen) {
-        boxes.forEach(box => {box.classList.add('software__hidden');
-    })}
+        softwareProject.forEach(sp => {sp.classList.add('software__hidden');
+    })
+        marketingProject.forEach(mp => {mp.classList.remove('marketing__hidden');   
+})}
     else {
-        boxes.forEach(box => {box.classList.remove('software__hidden');   
+        softwareProject.forEach(sp => {sp.classList.remove('software__hidden');   
     })}
 
 }
