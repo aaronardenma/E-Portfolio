@@ -226,14 +226,14 @@ nav,
   background-color: #5383e8;
   color: white;
   padding: 6px;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
-  margin-right: 12px;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+  margin-right: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 .mail__btn {
@@ -383,7 +383,7 @@ nav {
   flex-wrap: wrap;
 }
 
-.modal__language {
+.modal__language--4logos {
   width: 25%;
   padding: 16px;
   position: relative;
@@ -393,11 +393,30 @@ nav {
   transition: all 300ms ease;
 }
 
-.modal__language:hover .language__name {
+.modal__language--3logos {
+  width: 33.33%;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.modal__language--4logos:hover .language__name {
   transform: scale(1);
 }
 
-.modal__language:hover {
+.modal__language--3logos:hover .language__name {
+  transform: scale(1);
+}
+
+.modal__language--4logos:hover {
+  filter: brightness(80%);
+  transform: scale(0.9);
+}
+
+.modal__language--3logos:hover {
   filter: brightness(80%);
   transform: scale(0.9);
 }
@@ -411,6 +430,7 @@ nav {
 
 .modal__language--img {
   width: 100%;
+  margin: auto 0;
 }
 
 .modal__contact {
@@ -623,16 +643,6 @@ nav {
   .project__description--para {
     margin: 16px 0;
   }
-
-
-/* .software__hidden {
-  display: none;
-}
-
-.marketing__hidden {
-  display: none;
-
-} */
 
 
 

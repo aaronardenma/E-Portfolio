@@ -60,10 +60,10 @@
                 <h1 class="title">
                     Hey
                 </h1>
-                <h1 class="title blue">I'm Aaron.</h1>
+                <h1 class="title blue">I'm Aaron!</h1>
                 <p class="header__para">
                     I'm an aspiring <b class="blue">Software Engineer</b> and currently a <b class="blue">Student</b> at the University of British Columbia
-                    studying <b class="blue">Computer Science, Data Science, and Statistics</b>.
+                    studying <b class="blue">Computer Science</b>.
                     <br>
                     Here's a bit more <b class="blue click" onclick="toggleModal()">about me.</b>
                 </p>
@@ -96,33 +96,50 @@
                 <h3 class="modal__title modal__title--about">Here's a bit more about me.</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Student and Aspiring Software Engineer</h4>
                 <p class="modal__para">
-                    I'm a <b class="blue">student</b> at the University of British Columbia pursuing a degree in Integrated Sciences with a specialization in 
-                    Computer Science, Data Science, and Statistics. 
+                    I'm a <b class="blue">student</b> at the University of British Columbia pursuing a second degree in Computer Science, with a previous degree in Psychology and Commerce.
                     <br>
                     I previously interned at <b class="blue">SAP</b> where I gained experience in a non-technical team to build data workflows and spearhead 
                     a data dashboard for SAP customer success events for internal post and pre-sales teams.
                 </p>
                 <div class="modal__languages">
-                    <figure class="modal__language">
+                    <figure class="modal__language--4logos">
                         <img class="modal__language--img"
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
                           alt="">
                         <span class="language__name">HTML</span>
                       </figure>
-                      <figure class="modal__language">
+                      <figure class="modal__language--4logos">
                         <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
                           alt="">
                         <span class="language__name">CSS</span>
                       </figure>
-                      <figure class="modal__language">
+                      <figure class="modal__language--4logos">
                         <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
                           alt="">
                         <span class="language__name">JavaScript</span>
                       </figure>
-                      <figure class="modal__language">
+                      <figure class="modal__language--4logos">
                         <img class="modal__language--img"
                           src="https://cdn.iconscout.com/icon/free/png-256/python-2038870-1720083.png" alt="">
                         <span class="language__name">Python</span>
+                      </figure>
+                </div>
+                <div class="modal__languages">
+                    <figure class="modal__language--3logos">
+                        <img class="modal__language--img"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/213px-ISO_C%2B%2B_Logo.svg.png"
+                          alt="">
+                        <span class="language__name">C++</span>
+                      </figure>
+                      <figure class="modal__language--3logos">
+                        <img class="modal__language--img" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png"
+                          alt="">
+                        <span class="language__name">Java</span>
+                      </figure>
+                      <figure class="modal__language--3logos">
+                        <img class="modal__language--img"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/310px-R_logo.svg.png" alt="">
+                        <span class="language__name">R</span>
                       </figure>
                 </div>
             </div>
@@ -138,15 +155,15 @@
                 <form onsubmit="contact(event)" id="contact__form">
                     <div class="form__item">
                         <label for="name" class="form__item--label">Name</label>
-                        <input type="text" name="user_name" class="input" type= "text"></input>
+                        <input type="text" name="user_name" class="input" type= "text" placeholder="Enter your name"></input>
                     </div>
                     <div class="form__item">
                         <label for="email" class="form__item--label">Email</label>
-                        <input type="text" name="user_email" class="input" type= "email"></input>
+                        <input type="text" name="user_email" class="input" type= "email", placeholder="Enter your email"></input>
                     </div>
                     <div class="form__item">
                         <label for="message" class="form__item--label">Message</label>
-                        <textarea type="text" name="message" class="input" type= "text"></textarea>
+                        <textarea type="text" name="message" class="input" type= "text" placeholder="Let's have a chat!"></textarea>
                     </div>
                     <button id="contact__submit" class="form__submit">Send it my way</button>
                 </form>
@@ -263,7 +280,6 @@
                         </div>
                     </div>
                 </li> 
-                </ul>
             </div>
         </div>
     </section>
