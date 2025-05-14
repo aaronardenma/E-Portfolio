@@ -133,23 +133,28 @@
                       </figure>
                       <figure class="modal__language--4logos">
                         <img class="modal__language--img"
-                          src="https://cdn.iconscout.com/icon/free/png-256/python-2038870-1720083.png" alt="">
-                        <span class="language__name">Python</span>
+                          src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="">
+                        <span class="language__name">Typescript</span>
                       </figure>
                 </div>
                 <div class="modal__languages">
-                    <figure class="modal__language--3logos">
+                    <figure class="modal__language--4logos">
+                      <img class="modal__language--img"
+                        src="https://cdn.iconscout.com/icon/free/png-256/python-2038870-1720083.png" alt="">
+                      <span class="language__name">Python</span>
+                    </figure>
+                    <figure class="modal__language--4logos">
                         <img class="modal__language--img"
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/213px-ISO_C%2B%2B_Logo.svg.png"
                           alt="">
                         <span class="language__name">C++</span>
                       </figure>
-                      <figure class="modal__language--3logos">
+                      <figure class="modal__language--4logos">
                         <img class="modal__language--img" src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png"
                           alt="">
                         <span class="language__name">Java</span>
                       </figure>
-                      <figure class="modal__language--3logos">
+                      <figure class="modal__language--4logos">
                         <img class="modal__language--img"
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/310px-R_logo.svg.png" alt="">
                         <span class="language__name">R</span>
@@ -214,25 +219,63 @@
                 </div>
                 <li class="project">
                     <div class="project__wrapper">
+                        <img src="./assets/calmCorners.png" class="project__img" alt="">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                Calm Corners
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                React, Node, Express, MongoDB, TypeScript, Tailwind
+                            </h4>
+                            <p class="project__description--para">
+                                ●	Developed a crowdsourced, real-time noise-level tracker web app for study spots using the MERN stack (MongoDB, Express, React, Node) with Typescript
+                                <br>
+                                ●	Integrated Google Maps API to fetch and display study locations (e.g., libraries, cafes) with interactive, color-coded noise level markers
+                                <br>
+                                ●	Designed and implemented MongoDB schemas to store Google Maps landmark data and user-submitted noise reviews
+                                <br>
+                                ●	Built RESTful API endpoints with Express to handle axios requests between React frontend and MongoDB
+                                <br>
+                                ●	Created a responsive, mobile-friendly frontend in React, styled with Tailwind CSS, featuring dynamic noise review displays and real-time updates
+
+                            </p>
+                            <div class="project__description--links">
+                                <a href="https://github.com/aaronardenma/CalmCorners" target="_blank" class="project__description--link click">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                                      </svg>
+                                </a>
+                                <a href="https://devpost.com/software/calmcorners" target="_blank" class="project__description--link click">
+                                   <span class="link__hover-effect link__hover-effect--white">DevPost</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="project__wrapper">
                         <img src="./assets/netflix logo.jpeg" class="project__img" alt="">
                         <div class="project__wrapper--bg"></div>
                         <div class="project__description">
                             <h3 class="project__description--title">
-                                Netflix Wrapped Data Analysis
+                                Netflix Wrapped
                             </h3>
                             <h4 class="project__description--sub-title">
-                                Python, Plotly, React, Flask
+                                React, Flask, pandas, numPy, Plotly, recharts
                             </h4>
                             <p class="project__description--para">
-                                ●	Utilized Python libraries pandas and nltk, to perform data manipulation and create automated workflows with Netflix viewing activity
+                                ●	Created full-stack web app with frontend React, axios requests to send/receive Netflix activity and visualize Python wrangled data viewing patterns with recharts
                                 <br>
-                                ●	Used Kaggle Netflix Dataset as a Netflix API alternative for data validation and enrichment for media type, rating, and in the future genre analysis
+                                ●	Used Python to implement Flask API for file uploads, sessional data transfer for graphs, and user information
                                 <br>
-                                ●	Executed token analysis matching for data validation between different database sources for future enrichment
+                                ●	Utilized Python libraries pandas & numPy, to clean, manipulate and visualize user Netflix viewing activity data
                                 <br>
-                                ●	Performed data visualization with plotly: Watch time patterns across media types, titles, ratings, duration
+                                ●	Used Kaggle Netflix Dataset for data validation, enrichment for media type, rating, and genre analysis
                                 <br>
-                                ●	Currently integrating Python script into a full-stack web app with React as frontend and Flask as backend
+                                ●	Executed nltk token analysis matching for data validation between different database sources for future enrichment
+                                <br>
+                                ●	Performed data visualization with recharts & plotly: Watch time patterns for media types, titles, ratings, duration
                             </p>
                             <div class="project__description--links">
                                 <a href="https://github.com/aaronardenma/Netflix-wrapped" target="_blank" class="project__description--link click">
