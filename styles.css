@@ -552,10 +552,11 @@ nav {
   margin-bottom: 60px;
   
 }
+
 /* Grid container styles */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   width: 100%;
   list-style: none;
@@ -699,7 +700,7 @@ nav {
 /* Responsive Design */
 @media (max-width: 1024px) {
   .projects__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 32px;
   }
 }
@@ -712,6 +713,8 @@ nav {
   
   .project__description {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
   
   .project__description--title {
@@ -720,25 +723,61 @@ nav {
   
   .project__description--sub-title {
     font-size: 13px;
+    margin: 8px 0 14px 0;
   }
   
   .project__description--para {
     font-size: 13px;
+    line-height: 1.5;
+    margin: 12px 0 16px 0;
+  }
+  
+  .project__description--links {
+    margin-top: auto;
+    padding-top: 12px;
+    flex-shrink: 0; /* Prevent links from shrinking */
   }
 }
 
 @media (max-width: 480px) {
   .project__description--para {
     display: block; /* Override the display: none from original CSS */
+    margin: 12px 0 16px 0; /* Reduce bottom margin */
   }
   
   .project__description {
     padding: 16px;
     text-align: left; /* Override center alignment from original CSS */
+    min-height: auto; /* Ensure proper height calculation */
   }
   
   .project__description--title {
     font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .project__description--sub-title {
+    font-size: 12px;
+    margin: 6px 0 12px 0;
+  }
+  
+  .project__description--links {
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .project__description--link {
+    font-size: 18px;
+    margin-right: 0; /* Remove right margin */
+    padding: 4px; /* Add some padding for easier touch targets */
+  }
+  
+  .project__description--link svg {
+    width: 18px;
+    height: 18px;
   }
   
   .project__img {
@@ -748,7 +787,12 @@ nav {
   .project__wrapper--bg {
     height: 160px;
   }
+  
+  .project__wrapper {
+    margin-bottom: 16px; /* Add some space between cards */
+  }
 }
+/*
 
     FOOTER
 
