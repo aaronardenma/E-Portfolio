@@ -145,7 +145,6 @@ img {
 
 #site-nav a::after,
 .text-link::after,
-.note-links a::after,
 .project-link::after,
 .contact-footer a::after {
   content: "";
@@ -162,7 +161,6 @@ img {
 #site-nav a:hover::after,
 #site-nav a:focus-visible::after,
 .text-link:hover::after,
-.note-links a:hover::after,
 .project-link:hover::after,
 .contact-footer a:hover::after {
   right: auto;
@@ -202,19 +200,22 @@ img {
   max-height: 980px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.75fr);
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
   gap: clamp(50px, 8vw, 130px);
-  width: min(100%, 1440px);
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 118px clamp(32px, 6vw, 88px) 80px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 118px clamp(24px, 5vw, 84px) 80px;
 }
 
-.hero-copy,
-.hero-note {
+.hero-copy {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 1040px;
+  text-align: center;
 }
 
 .eyebrow,
@@ -233,6 +234,7 @@ img {
 .eyebrow {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 26px;
 }
@@ -254,7 +256,7 @@ img {
 }
 
 .hero h1 {
-  max-width: 760px;
+  max-width: 1040px;
   margin: 0 0 28px;
   font-size: clamp(68px, 9.5vw, 138px);
   font-weight: 800;
@@ -270,7 +272,7 @@ img {
 
 .hero-intro {
   max-width: 630px;
-  margin: 0;
+  margin: 0 auto;
   color: var(--muted);
   font-size: clamp(19px, 2vw, 25px);
   line-height: 1.48;
@@ -284,6 +286,7 @@ img {
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   margin-top: 38px;
 }
@@ -317,7 +320,6 @@ img {
 }
 
 .text-link,
-.note-links a,
 .project-link,
 .contact-footer a {
   position: relative;
@@ -325,40 +327,10 @@ img {
   font-weight: 600;
 }
 
-.hero-note {
-  align-self: end;
-  margin-bottom: 76px;
-  padding: 30px 0 12px;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--line);
-}
-
-.note-main {
-  margin: 20px 0;
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(26px, 3vw, 38px);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.1;
-}
-
-.note-detail {
-  margin: 0;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.note-links {
-  display: flex;
-  gap: 24px;
-  margin-top: 28px;
-}
-
 .scroll-cue {
   position: absolute;
   bottom: 30px;
-  left: clamp(32px, 6vw, 88px);
+  left: 50%;
   z-index: 3;
   display: flex;
   align-items: center;
@@ -368,6 +340,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transform: translateX(-50%);
 }
 
 .scroll-cue i {
@@ -823,12 +796,6 @@ img {
     padding-bottom: 100px;
   }
 
-  .hero-note {
-    align-self: auto;
-    max-width: 600px;
-    margin: 0;
-  }
-
   .hero-shapes img:nth-child(1),
   .hero-shapes img:nth-child(4) {
     right: 5%;
@@ -959,7 +926,7 @@ img {
   }
 
   .hero-actions {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 28px;
   }

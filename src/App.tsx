@@ -195,15 +195,6 @@ function Hero() {
           <a className="text-link" href="mailto:aaronardenma@gmail.com">aaronardenma@gmail.com <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <aside className="hero-note reveal" aria-label="A short introduction">
-        <p className="note-index">01 / HELLO</p>
-        <p className="note-main">Curious by nature.<br />Practical by design.</p>
-        <p className="note-detail">Computer Science at UBC, with roots in psychology and commerce. I like turning fuzzy problems into useful, human software.</p>
-        <div className="note-links">
-          <a href="https://github.com/aaronardenma" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/aaronardenma/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        </div>
-      </aside>
       <a className="scroll-cue" href="#work" aria-label="Scroll to selected work"><span>Scroll to work</span><i aria-hidden="true"></i></a>
     </section>
   );
