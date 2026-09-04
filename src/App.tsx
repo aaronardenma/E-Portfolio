@@ -334,7 +334,7 @@ function About() {
               <h4>Apera AI</h4>
               <p>Full-Stack Software Development Engineer Intern</p>
             </div>
-            <p>Built React, TypeScript, and Three.js tools for robot playback and analytics; designed Flask APIs and Python/AWS migration workflows; and expanded automated coverage across the React and Flask test suites.</p>
+            <p>Apera AI builds robotic-vision systems for automated bin picking. I contributed to VuePod, its newest product, by helping deliver the full-stack integration with Forge, Apera’s simulator engine and application—building React, TypeScript, and Three.js tools for frame-by-frame robot playback, simulation state, cycle-time, part-outcome, and path-usage analytics.</p>
           </article>
           <article className="experience-item">
             <div>
