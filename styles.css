@@ -205,10 +205,10 @@ img {
   grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.75fr);
   align-items: center;
   gap: clamp(50px, 8vw, 130px);
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 118px clamp(24px, 5vw, 84px) 80px;
+  width: min(100%, 1440px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 118px clamp(32px, 6vw, 88px) 80px;
 }
 
 .hero-copy,
@@ -358,7 +358,7 @@ img {
 .scroll-cue {
   position: absolute;
   bottom: 30px;
-  left: clamp(24px, 5vw, 84px);
+  left: clamp(32px, 6vw, 88px);
   z-index: 3;
   display: flex;
   align-items: center;
