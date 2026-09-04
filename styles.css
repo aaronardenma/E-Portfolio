@@ -102,7 +102,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 max(24px, calc((100vw - var(--max)) / 2));
+  padding: 0 clamp(24px, 5vw, 84px);
   border-bottom: 1px solid transparent;
   background: var(--header-bg);
   backdrop-filter: blur(16px);
@@ -205,9 +205,10 @@ img {
   grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.75fr);
   align-items: center;
   gap: clamp(50px, 8vw, 130px);
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 118px max(32px, calc((100vw - var(--max)) / 2)) 80px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 118px clamp(24px, 5vw, 84px) 80px;
 }
 
 .hero-copy,
@@ -357,7 +358,7 @@ img {
 .scroll-cue {
   position: absolute;
   bottom: 30px;
-  left: max(32px, calc((100vw - var(--max)) / 2));
+  left: clamp(24px, 5vw, 84px);
   z-index: 3;
   display: flex;
   align-items: center;

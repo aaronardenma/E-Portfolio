@@ -42,6 +42,17 @@ interface SupportingProjectData {
 const featuredProjects: FeaturedProjectData[] = [
   {
     number: "01",
+    name: "Netflix Wrapped",
+    type: "Data product · Full stack",
+    description: "A personal analytics app that transforms Netflix viewing history into meaningful trends, visual stories, and recommendations.",
+    stack: "React · Django · PostgreSQL · D3.js · scikit-learn",
+    image: netflix,
+    alt: "Netflix Wrapped project artwork",
+    primaryLink: "https://github.com/aaronardenma/Netflix-wrapped",
+    links: [{ label: "View project", href: "https://github.com/aaronardenma/Netflix-wrapped" }],
+  },
+  {
+    number: "02",
     name: "Trailmate",
     type: "Full-stack product · 2025",
     description: "A hiking planner that helps people discover trails and prepare around weather, difficulty, gear, and live hazard reports.",
@@ -51,31 +62,17 @@ const featuredProjects: FeaturedProjectData[] = [
     primaryLink: "https://github.com/aaronardenma/Trailmate",
     links: [{ label: "View project", href: "https://github.com/aaronardenma/Trailmate" }],
   },
+];
+
+const supportingProjects: SupportingProjectData[] = [
   {
-    number: "02",
     name: "Calm Corners",
     type: "Community utility · Hackathon",
     description: "A crowdsourced noise-level tracker that makes it easier to find the right library, café, or study spot in real time.",
     stack: "React · TypeScript · Node · MongoDB · Google Maps",
     image: calmCorners,
     alt: "Calm Corners map interface with colour-coded study space noise levels",
-    primaryLink: "https://devpost.com/software/calmcorners",
-    links: [
-      { label: "GitHub", href: "https://github.com/aaronardenma/CalmCorners" },
-      { label: "Devpost", href: "https://devpost.com/software/calmcorners" },
-    ],
-  },
-];
-
-const supportingProjects: SupportingProjectData[] = [
-  {
-    name: "Netflix Wrapped",
-    type: "Data visualization · Full stack",
-    description: "Turns viewing-history data into personal trends, visual stories, and recommendations.",
-    stack: "React · Django · PostgreSQL · D3.js",
-    image: netflix,
-    alt: "Netflix Wrapped project artwork",
-    href: "https://github.com/aaronardenma/Netflix-wrapped",
+    href: "https://devpost.com/software/calmcorners",
   },
   {
     name: "Welldo",
@@ -267,8 +264,8 @@ function Work() {
   return (
     <section className="work section" id="work" aria-labelledby="work-title">
       <div className="section-heading reveal">
-        <div><p className="section-kicker">02 / Selected work</p><h2 id="work-title">Ideas, made useful.</h2></div>
-        <p>Full-stack products shaped by real-world needs—from safer hikes to calmer study spaces.</p>
+        <div><p className="section-kicker">02 / Selected work</p><h2 id="work-title">A few things I’ve built.</h2></div>
+        <p>Selected full-stack and data projects, built from first question to working product.</p>
       </div>
       <div className="projects">
         {featuredProjects.map((project, index) => <FeaturedProject project={project} reverse={index % 2 === 1} key={project.name} />)}
@@ -309,8 +306,8 @@ function Contact() {
       <div className="contact-shape" aria-hidden="true"></div>
       <p className="section-kicker reveal">04 / Let’s connect</p>
       <div className="contact-main reveal">
-        <h2 id="contact-title">Have a problem worth <em>solving?</em></h2>
-        <a href="mailto:aaronardenma@gmail.com" aria-label="Email Aaron Ma">Let’s talk <span aria-hidden="true">↗</span></a>
+        <h2 id="contact-title">Interested in <em>connecting?</em></h2>
+        <a href="mailto:aaronardenma@gmail.com" aria-label="Email Aaron Ma">Contact me <span aria-hidden="true">↗</span></a>
       </div>
       <div className="contact-footer reveal">
         <p>Based in Vancouver, BC</p>
