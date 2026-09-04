@@ -342,7 +342,7 @@ function About() {
               <h4>SS&amp;C Technologies</h4>
               <p>Software Engineer Intern</p>
             </div>
-            <p>Developed 20+ Angular and TypeScript components, built NgRx and RxJS state workflows, integrated REST APIs, and delivered 75+ frontend and backend features and fixes in an Agile team.</p>
+            <p>Was a core contributor to the Data Object Designer prototype during its early-stage development. I built and tested 20+ Angular and TypeScript components, shaped NgRx and RxJS state workflows, added Monaco-powered schema editing and dynamic JSON validation, integrated REST APIs, and delivered 75+ frontend and backend features and fixes.</p>
           </article>
           <article className="experience-item">
             <div>
