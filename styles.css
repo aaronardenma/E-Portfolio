@@ -801,14 +801,18 @@ img {
 .contact-main > a {
   position: relative;
   z-index: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   width: 136px;
   height: 136px;
   border-radius: 50%;
   background: var(--blue);
   font-family: "Manrope", sans-serif;
   font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
   transition: transform 200ms ease, background-color 200ms ease;
 }
 

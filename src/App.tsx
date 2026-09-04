@@ -172,7 +172,7 @@ function Header({ darkMode, onThemeToggle }: HeaderProps) {
         <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
         <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
         <a href="#contact" onClick={() => setMenuOpen(false)}>Connect</a>
-        <a href={resume} target="_blank" rel="noreferrer">Résumé <span aria-hidden="true">↗</span></a>
+        <a href={resume} target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
         <button className="theme-toggle" type="button" aria-label={`Switch to ${darkMode ? "light" : "dark"} theme`} title="Switch theme" onClick={onThemeToggle}>
           <span className="theme-icon" aria-hidden="true">{darkMode ? "☾" : "☼"}</span>
         </button>
@@ -316,16 +316,16 @@ function About() {
 
   return (
     <section className="about section" id="about" aria-labelledby="about-title">
-      <div className="about-title reveal"><p className="section-kicker">02 / About</p><h2 id="about-title">Built from<br /><em>different angles.</em></h2></div>
+      <div className="about-title reveal"><p className="section-kicker">02 / About</p><h2 id="about-title">About <em>me.</em></h2></div>
       <div className="about-copy reveal">
         <p className="about-lead">I’m pursuing a second degree in Computer Science at UBC after studying Psychology and Commerce—an uncommon mix that shapes how I build.</p>
         <p>Across my work, I care about asking better questions, making complex systems feel clear, and shipping things people can actually use.</p>
-        <a className="button button-outline" href={resume} target="_blank" rel="noreferrer">Read my résumé <span aria-hidden="true">↗</span></a>
+        <a className="button button-outline" href={resume} target="_blank" rel="noreferrer">Read my resume <span aria-hidden="true">↗</span></a>
       </div>
       <div className="experience reveal">
         <div className="experience-intro">
-          <p className="section-kicker">Recent experience</p>
-          <h3>Learning by<br />building for real.</h3>
+          <p className="section-kicker">Experience</p>
+          <h3>Recent roles.</h3>
         </div>
         <div className="experience-list">
           <article className="experience-item">
@@ -343,6 +343,14 @@ function About() {
               <p>Software Engineer Intern</p>
             </div>
             <p>Developed 20+ Angular and TypeScript components, built NgRx and RxJS state workflows, integrated REST APIs, and delivered 75+ frontend and backend features and fixes in an Agile team.</p>
+          </article>
+          <article className="experience-item">
+            <div>
+              <span>2022 — 2023</span>
+              <h4>SAP</h4>
+              <p>Customer Success Marketing &amp; Communications Specialist Intern</p>
+            </div>
+            <p>Automated pandas and NumPy data workflows to reduce manual processing by 98%, led a customer-success dashboard that cut data availability lag by 50%, and added pytest validation with technical documentation.</p>
           </article>
         </div>
       </div>
