@@ -169,9 +169,9 @@ function Header({ darkMode, onThemeToggle }: HeaderProps) {
         <span className="sr-only">{menuOpen ? "Close" : "Open"} navigation</span>
       </button>
       <nav id="site-nav">
-        <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
         <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Connect</a>
         <a href={resume} target="_blank" rel="noreferrer">Résumé <span aria-hidden="true">↗</span></a>
         <button className="theme-toggle" type="button" aria-label={`Switch to ${darkMode ? "light" : "dark"} theme`} title="Switch theme" onClick={onThemeToggle}>
           <span className="theme-icon" aria-hidden="true">{darkMode ? "☾" : "☼"}</span>
@@ -223,11 +223,11 @@ function Hero() {
         <h1 id="hero-title">Hey, I’m <em>Aaron.</em></h1>
         <p className="hero-intro">A software engineer who builds thoughtful digital products at the intersection of <strong>people, data, and code.</strong></p>
         <div className="hero-actions">
-          <a className="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a className="button button-primary" href="#about">More about me <span aria-hidden="true">↓</span></a>
           <a className="text-link" href="mailto:aaronardenma@gmail.com">aaronardenma@gmail.com <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <a className="scroll-cue" href="#work" aria-label="Scroll to selected work"><span>Scroll to work</span><i aria-hidden="true"></i></a>
+      <a className="scroll-cue" href="#about" aria-label="Scroll to about Aaron"><span>Scroll to about</span><i aria-hidden="true"></i></a>
     </section>
   );
 }
@@ -291,9 +291,9 @@ function SupportingProject({ project }: SupportingProjectProps) {
 
 function Work() {
   return (
-    <section className="work section" id="work" aria-labelledby="work-title">
+    <section className="work section" id="projects" aria-labelledby="projects-title">
       <div className="section-heading reveal">
-        <div><p className="section-kicker">02 / Selected work</p><h2 id="work-title">A few things I’ve built.</h2></div>
+        <div><p className="section-kicker">03 / Selected work</p><h2 id="projects-title">A few things I’ve built.</h2></div>
         <p>Selected full-stack and data projects, built from first question to working product.</p>
       </div>
       <div className="projects">
@@ -316,7 +316,7 @@ function About() {
 
   return (
     <section className="about section" id="about" aria-labelledby="about-title">
-      <div className="about-title reveal"><p className="section-kicker">03 / About</p><h2 id="about-title">Built from<br /><em>different angles.</em></h2></div>
+      <div className="about-title reveal"><p className="section-kicker">02 / About</p><h2 id="about-title">Built from<br /><em>different angles.</em></h2></div>
       <div className="about-copy reveal">
         <p className="about-lead">I’m pursuing a second degree in Computer Science at UBC after studying Psychology and Commerce—an uncommon mix that shapes how I build.</p>
         <p>Across my work, I care about asking better questions, making complex systems feel clear, and shipping things people can actually use.</p>
@@ -403,7 +403,7 @@ export default function App() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <Header darkMode={darkMode} onThemeToggle={() => setDarkMode((dark) => !dark)} />
-      <main id="main"><Hero /><Work /><About /><Contact /></main>
+      <main id="main"><Hero /><About /><Work /><Contact /></main>
     </>
   );
 }
