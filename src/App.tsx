@@ -21,6 +21,7 @@ interface FeaturedProjectData {
   name: string;
   type: string;
   description: string;
+  features: string[];
   stack: string;
   image: string;
   alt: string;
@@ -32,6 +33,7 @@ interface SupportingProjectData {
   name: string;
   type: string;
   description: string;
+  features: string[];
   stack: string;
   image?: string;
   alt?: string;
@@ -45,6 +47,11 @@ const featuredProjects: FeaturedProjectData[] = [
     name: "Netflix Wrapped",
     type: "Data product · Full stack",
     description: "A personal analytics app that transforms Netflix viewing history into meaningful trends, visual stories, and recommendations.",
+    features: [
+      "Interactive yearly recaps generated from Netflix viewing-history uploads",
+      "Hybrid content recommender using TF-IDF, cosine similarity, recency, and user feedback",
+      "Asynchronous CSV processing with Redis and RQ for responsive initial results",
+    ],
     stack: "React · Django · PostgreSQL · D3.js · scikit-learn",
     image: netflix,
     alt: "Netflix Wrapped project artwork",
@@ -56,6 +63,11 @@ const featuredProjects: FeaturedProjectData[] = [
     name: "Trailmate",
     type: "Full-stack product · 2025",
     description: "A hiking planner that helps people discover trails and prepare around weather, difficulty, gear, and live hazard reports.",
+    features: [
+      "Trail discovery with search filters, dynamic routing, and shared Redux state",
+      "Live maps, forecasts, directions, and location-based hazard reporting",
+      "JWT authentication, tested REST APIs, and a Dockerized full-stack setup",
+    ],
     stack: "React · Express · MongoDB · Google Maps · Docker",
     image: trailmate,
     alt: "Trailmate hiking planner interface showing nearby trails and route details",
@@ -69,6 +81,11 @@ const supportingProjects: SupportingProjectData[] = [
     name: "Calm Corners",
     type: "Community utility · Hackathon",
     description: "A crowdsourced noise-level tracker that makes it easier to find the right library, café, or study spot in real time.",
+    features: [
+      "Interactive Google Map with colour-coded noise markers",
+      "Crowdsourced reviews with real-time noise-level updates",
+      "MongoDB models and REST endpoints for places and submissions",
+    ],
     stack: "React · TypeScript · Node · MongoDB · Google Maps",
     image: calmCorners,
     alt: "Calm Corners map interface with colour-coded study space noise levels",
@@ -78,6 +95,11 @@ const supportingProjects: SupportingProjectData[] = [
     name: "Welldo",
     type: "Wellness · Database systems",
     description: "A mental-health activity app that recommends helpful routines based on how a person feels.",
+    features: [
+      "Mood-based preset and personalized activity recommendations",
+      "Relational Oracle schema with analytical SQL queries",
+      "Authenticated, responsive React experience backed by Express",
+    ],
     stack: "React · Express · Oracle · SQL",
     customMedia: true,
   },
@@ -85,6 +107,11 @@ const supportingProjects: SupportingProjectData[] = [
     name: "Game Party Finder",
     type: "Desktop application",
     description: "A Java desktop app for finding other players, built with test-driven development and local persistence.",
+    features: [
+      "Player and party matching through a desktop Swing interface",
+      "Local JSON persistence for saved party data",
+      "JUnit coverage developed with test-driven design principles",
+    ],
     stack: "Java · Swing · JUnit · JSON",
     image: gamePartyFinder,
     alt: "Game Party Finder desktop application interface",
@@ -94,6 +121,11 @@ const supportingProjects: SupportingProjectData[] = [
     name: "Maternal Health Classifier",
     type: "Machine learning · Research",
     description: "A k-nearest-neighbours model that classifies maternal health risk with 82% test accuracy.",
+    features: [
+      "K-nearest-neighbours classification across six health factors",
+      "Cross-validation that reached 82% accuracy and 88% precision",
+      "Exploratory risk visualizations built with ggplot2 and tidyverse",
+    ],
     stack: "R · tidyverse · ggplot2 · kknn",
     image: maternalClassifier,
     alt: "Maternal health risk model data visualizations",
@@ -217,6 +249,9 @@ function FeaturedProject({ project, reverse }: FeaturedProjectProps) {
         <div><p className="project-type">{project.type}</p><h3>{project.name}</h3></div>
         <div>
           <p>{project.description}</p>
+          <ul className="project-features">
+            {project.features.map((feature) => <li key={feature}>{feature}</li>)}
+          </ul>
           <p className="project-stack">{project.stack}</p>
           <div className="project-links">
             {project.links.map((link) => <a className="project-link" href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} ↗</a>)}
@@ -246,6 +281,9 @@ function SupportingProject({ project }: SupportingProjectProps) {
       <p className="project-type">{project.type}</p>
       <h3>{project.name}</h3>
       <p>{project.description}</p>
+      <ul className="project-features">
+        {project.features.map((feature) => <li key={feature}>{feature}</li>)}
+      </ul>
       <p className="project-stack">{project.stack}</p>
     </article>
   );
@@ -281,8 +319,32 @@ function About() {
       <div className="about-title reveal"><p className="section-kicker">03 / About</p><h2 id="about-title">Built from<br /><em>different angles.</em></h2></div>
       <div className="about-copy reveal">
         <p className="about-lead">I’m pursuing a second degree in Computer Science at UBC after studying Psychology and Commerce—an uncommon mix that shapes how I build.</p>
-        <p>At SAP, I built data workflows and led the development of a customer-success events dashboard for internal sales teams. Across my work, I care about asking better questions, making complex systems feel clear, and shipping things people can actually use.</p>
+        <p>Across my work, I care about asking better questions, making complex systems feel clear, and shipping things people can actually use.</p>
         <a className="button button-outline" href={resume} target="_blank" rel="noreferrer">Read my résumé <span aria-hidden="true">↗</span></a>
+      </div>
+      <div className="experience reveal">
+        <div className="experience-intro">
+          <p className="section-kicker">Recent experience</p>
+          <h3>Learning by<br />building for real.</h3>
+        </div>
+        <div className="experience-list">
+          <article className="experience-item">
+            <div>
+              <span>2026 — Present</span>
+              <h4>Apera AI</h4>
+              <p>Full-Stack Software Development Engineer Intern</p>
+            </div>
+            <p>Built React, TypeScript, and Three.js tools for robot playback and analytics; designed Flask APIs and Python/AWS migration workflows; and expanded automated coverage across the React and Flask test suites.</p>
+          </article>
+          <article className="experience-item">
+            <div>
+              <span>2025 — 2026</span>
+              <h4>SS&amp;C Technologies</h4>
+              <p>Software Engineer Intern</p>
+            </div>
+            <p>Developed 20+ Angular and TypeScript components, built NgRx and RxJS state workflows, integrated REST APIs, and delivered 75+ frontend and backend features and fixes in an Agile team.</p>
+          </article>
+        </div>
       </div>
       <div className="skills reveal">
         {skills.map(([title, items], index) => <div key={title}><span>0{index + 1}</span><p><strong>{title}</strong>{items}</p></div>)}

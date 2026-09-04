@@ -203,11 +203,11 @@ img {
   grid-template-columns: 1fr;
   justify-items: center;
   align-items: center;
-  gap: clamp(50px, 8vw, 130px);
+  gap: 0;
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 118px clamp(24px, 5vw, 84px) 80px;
+  padding: 82px clamp(24px, 5vw, 84px) 124px;
 }
 
 .hero-copy {
@@ -236,7 +236,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 26px;
+  margin-bottom: 14px;
 }
 
 .eyebrow span {
@@ -257,7 +257,7 @@ img {
 
 .hero h1 {
   max-width: 1040px;
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   font-size: clamp(68px, 9.5vw, 138px);
   font-weight: 800;
   line-height: 0.84;
@@ -275,7 +275,7 @@ img {
   margin: 0 auto;
   color: var(--muted);
   font-size: clamp(19px, 2vw, 25px);
-  line-height: 1.48;
+  line-height: 1.4;
 }
 
 .hero-intro strong {
@@ -288,7 +288,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-top: 38px;
+  margin-top: 26px;
 }
 
 .button {
@@ -546,6 +546,32 @@ img {
   line-height: 1.7;
 }
 
+.project-features {
+  display: grid;
+  gap: 9px;
+  margin: 20px 0 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.project-features li {
+  position: relative;
+  padding-left: 17px;
+}
+
+.project-features li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+}
+
 .project-stack {
   margin: 20px 0 24px;
   color: var(--ink);
@@ -649,6 +675,59 @@ img {
 .button-outline:hover {
   background: var(--ink);
   color: var(--bg);
+}
+
+.experience {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 80px;
+  padding-top: 42px;
+  border-top: 1px solid var(--ink);
+}
+
+.experience-intro h3 {
+  margin: 20px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.experience-list {
+  border-top: 1px solid var(--line);
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.72fr) 1.28fr;
+  gap: 38px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item span {
+  color: var(--blue);
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience-item h4 {
+  margin: 10px 0 5px;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  letter-spacing: -0.035em;
+}
+
+.experience-item div p,
+.experience-item > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .skills {
@@ -789,11 +868,11 @@ img {
   .hero {
     grid-template-columns: 1fr;
     align-content: center;
-    gap: 46px;
+    gap: 0;
     height: auto;
     min-height: 100svh;
-    padding-top: 136px;
-    padding-bottom: 100px;
+    padding-top: 96px;
+    padding-bottom: 120px;
   }
 
   .hero-shapes img:nth-child(1),
@@ -835,6 +914,12 @@ img {
   .skills {
     grid-column: auto;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 48px;
+  }
+
+  .experience {
+    grid-template-columns: 1fr;
+    gap: 34px;
     margin-top: 48px;
   }
 
@@ -978,6 +1063,11 @@ img {
 
   .skills {
     grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .skills > div,
