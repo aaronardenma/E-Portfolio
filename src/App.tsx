@@ -11,7 +11,35 @@ import netflix from "../assets/netflix logo.jpeg";
 import gamePartyFinder from "../assets/game party finder.png";
 import maternalClassifier from "../assets/maternal classifier model.png";
 
-const featuredProjects = [
+interface ProjectLink {
+  label: string;
+  href: string;
+}
+
+interface FeaturedProjectData {
+  number: string;
+  name: string;
+  type: string;
+  description: string;
+  stack: string;
+  image: string;
+  alt: string;
+  primaryLink: string;
+  links: ProjectLink[];
+}
+
+interface SupportingProjectData {
+  name: string;
+  type: string;
+  description: string;
+  stack: string;
+  image?: string;
+  alt?: string;
+  href?: string;
+  customMedia?: boolean;
+}
+
+const featuredProjects: FeaturedProjectData[] = [
   {
     number: "01",
     name: "Trailmate",
@@ -39,7 +67,7 @@ const featuredProjects = [
   },
 ];
 
-const supportingProjects = [
+const supportingProjects: SupportingProjectData[] = [
   {
     name: "Netflix Wrapped",
     type: "Data visualization · Full stack",
@@ -76,7 +104,12 @@ const supportingProjects = [
   },
 ];
 
-function Header({ darkMode, onThemeToggle }) {
+interface HeaderProps {
+  darkMode: boolean;
+  onThemeToggle: () => void;
+}
+
+function Header({ darkMode, onThemeToggle }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -88,7 +121,7 @@ function Header({ darkMode, onThemeToggle }) {
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);
-    const closeOnEscape = (event) => event.key === "Escape" && setMenuOpen(false);
+    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setMenuOpen(false);
     document.addEventListener("keydown", closeOnEscape);
     return () => {
       document.body.classList.remove("menu-open");
@@ -120,13 +153,15 @@ function Header({ darkMode, onThemeToggle }) {
 }
 
 function Hero() {
-  const heroRef = useRef(null);
-  const shapeRefs = useRef([]);
+  const heroRef = useRef<HTMLElement>(null);
+  const shapeRefs = useRef<Array<HTMLImageElement | null>>([]);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const hero = heroRef.current;
-    const moveShapes = (event) => {
+    if (!hero) return;
+
+    const moveShapes = (event: PointerEvent) => {
       const x = (event.clientX / window.innerWidth - 0.5) * 22;
       const y = (event.clientY / window.innerHeight - 0.5) * 22;
       shapeRefs.current.forEach((shape) => {
@@ -135,11 +170,12 @@ function Hero() {
         shape.style.translate = `${x * speed}px ${y * speed}px`;
       });
     };
+
     hero.addEventListener("pointermove", moveShapes);
     return () => hero.removeEventListener("pointermove", moveShapes);
   }, []);
 
-  const shapes = [
+  const shapes: Array<[string, number]> = [
     [semiCircle, -0.7],
     [circle, 0.45],
     [squiggly, -0.35],
@@ -176,7 +212,12 @@ function Hero() {
   );
 }
 
-function FeaturedProject({ project, reverse }) {
+interface FeaturedProjectProps {
+  project: FeaturedProjectData;
+  reverse: boolean;
+}
+
+function FeaturedProject({ project, reverse }: FeaturedProjectProps) {
   return (
     <article className={`project-card project-featured${reverse ? " project-reverse" : ""} reveal`}>
       <a className="project-media" href={project.primaryLink} target="_blank" rel="noreferrer" aria-label={`View ${project.name}`}>
@@ -198,7 +239,11 @@ function FeaturedProject({ project, reverse }) {
   );
 }
 
-function SupportingProject({ project, index }) {
+interface SupportingProjectProps {
+  project: SupportingProjectData;
+}
+
+function SupportingProject({ project }: SupportingProjectProps) {
   const media = project.customMedia ? (
     <div className="small-media small-media-welldo"><div className="wordmark">WELL<span>DO</span></div><span aria-hidden="true">04</span></div>
   ) : (
@@ -228,7 +273,7 @@ function Work() {
       <div className="projects">
         {featuredProjects.map((project, index) => <FeaturedProject project={project} reverse={index % 2 === 1} key={project.name} />)}
         <div className="project-grid">
-          {supportingProjects.map((project, index) => <SupportingProject project={project} index={index} key={project.name} />)}
+          {supportingProjects.map((project) => <SupportingProject project={project} key={project.name} />)}
         </div>
       </div>
     </section>
@@ -236,7 +281,7 @@ function Work() {
 }
 
 function About() {
-  const skills = [
+  const skills: Array<[string, string]> = [
     ["Frontend", "React, TypeScript, JavaScript, Tailwind"],
     ["Backend", "Node, Express, Django, REST APIs"],
     ["Data", "PostgreSQL, MongoDB, Oracle, R"],
@@ -280,7 +325,7 @@ function Contact() {
 }
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(() => {
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem("portfolio-theme");
     return savedTheme ? savedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
@@ -288,7 +333,7 @@ export default function App() {
   useEffect(() => {
     document.body.classList.toggle("dark-theme", darkMode);
     localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light");
-    document.querySelector('meta[name="theme-color"]').setAttribute("content", darkMode ? "#0f1420" : "#f6f7fb");
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", darkMode ? "#0f1420" : "#f6f7fb");
   }, [darkMode]);
 
   useEffect(() => {

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node prepare-dist.mjs",
+    "typecheck": "tsc --noEmit",
+    "prepare:dist": "esbuild prepare-dist.ts --bundle --packages=external --platform=node --format=esm --outfile=.build/prepare-dist.mjs && node .build/prepare-dist.mjs",
+    "build": "npm run typecheck && vite build && npm run prepare:dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,7 +15,12 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.7.2",
     "vite": "^5.4.14"
   }
 }
